@@ -1,0 +1,22 @@
+{
+  "name": "microservice_boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/callumgordon90/Microservice_boilerplate.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/callumgordon90/Microservice_boilerplate/issues"
+  },
+  "homepage": "https://github.com/callumgordon90/Microservice_boilerplate#readme",
+  "dependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
