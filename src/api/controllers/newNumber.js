@@ -3,7 +3,11 @@ import db from '../../src/api/db.js'
 import { TypedRequest, TypedResponse } from '../../interfaces'
 import { Employee, Family } from 'src/api/models'
 
+import axios from 'axios';
 
+
+
+const axios = require('axios').default;
 
 const myRequest = new Request('info.json');
 
