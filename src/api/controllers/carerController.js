@@ -17,8 +17,8 @@ const createNumber = async (req, res) => {
         published: req.body.published ? req.body.published : false
     }
     const number = await Number.create(info)
-    res.status(200).send(product)
-    console.log(product)
+    res.status(200).send(number)
+    console.log(number)
 }
 
 // 2. check number
@@ -30,5 +30,12 @@ const createNumber = async (req, res) => {
 module.exports = {
     createNumber
     // checkNumber
-
 }
+
+// 3. export number 
+export const number = async (req: Request, res: Response) => {
+    const number = await db.getRepository(number).find();
+  
+    return res.json(number);
+  }
+  
