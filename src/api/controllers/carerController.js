@@ -1,9 +1,11 @@
-const db = require ('../models')
+import { Response, Request } from 'express'
+import db from '../../src/api/db.js'
+import { TypedRequest, TypedResponse } from '../../interfaces'
+import { Employee, Family } from 'src/api/models'
 
-// Create the main model
-const Product = db.products
 
-const Review = db.reviews
+
+
 
 // Main work
 
@@ -11,10 +13,38 @@ const Review = db.reviews
 
 const createNumber = async (req, res) => {
     let info = {
-        title: req.body.title,
-        price: req.body.price,
-        description: req.body.description,
-        published: req.body.published ? req.body.published : false
+        {
+            "event": "ringing",
+            "resource": "call",
+            "timestamp": 1554823493.762305,
+            "data": {
+              "id": "57622f20-a020-4f9e-814c-62a6123412fa",
+              "call_id": 1234567890987654400,
+              "channel_id": 123456789,
+              "start_time": 1554823493.762305,
+              "direction": "inbound",
+              "from_number": "33601020304",
+              "to_number": "33101020304",
+              "user_id": 12854321,
+              "is_internal": 1,
+              "is_anonymous": 0,
+              "is_ivr": 1,
+              "ivr_data": {
+                "number": "33101020304",
+                "scenario_name": "Opened",
+                "ivr_name": "myIVR"
+              },
+              "user": {
+                "user_id": 123456789,
+                "firstname": "Jean",
+                "lastname": "Dupont",
+                "email": "jean.dupont@ringover.com",
+                "photo": "https://cdn.ringover.com/img/users/default.jpg"
+              },
+              "status": "ringing"
+            },
+            "attempt": 2
+          }
     }
     const number = await Number.create(info)
     res.status(200).send(number)
